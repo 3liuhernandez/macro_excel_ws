@@ -28,7 +28,7 @@ Sub EnviarMensajesWhatsApp()
         ' Esperar unos segundos para permitir que la página se cargue
         Application.Wait (Now + TimeValue("00:00:10"))
 
-        ' Aquí podrías agregar código para enviar la tecla Enter de una manera más fiable si es necesario
+        ' enviar el mensaje presionando Enter
         Application.SendKeys "~", True
 
         Application.Wait (Now + TimeValue("00:00:1"))
@@ -36,7 +36,9 @@ Sub EnviarMensajesWhatsApp()
         ' Cerrar la pestaña del navegador
         Application.SendKeys "^w", True
 
-        ws.Cells(i, 4) = "1" ' Marcar como enviado en la columna D
+        ' Marcar como enviado en la columna D
+        ws.Cells(i, 4) = "1"
+
     Next i
 
     MsgBox "Mensajes enviados con éxito.", vbInformation
